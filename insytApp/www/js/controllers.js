@@ -1,6 +1,47 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ["ngCordova"])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope,$cordovaCamera, $http) {
+
+    $scope.model = {
+      showSpinner: false
+    };
+
+    $scope.takePicture = function(){
+
+      var options = {
+        destinationType: Camera.DestinationType.FILE_URI,
+        sourceType: Camera.PictureSourceType.CAMERA,
+      };
+
+      $cordovaCamera.getPicture(options).then(function(imageURI) {
+        $scope.model.imageSrc = imageURI;
+        $scope.model.showSpinner = true;
+        var url = "https://api.havenondemand.com/1/api/sync/recognizebarcodes/v1";
+        var formData = {
+          apikey: "bfb136fe-ef9f-4193-9c48-c31e652c06c0",
+          url: "https://raw.githubusercontent.com/sashi349/insyt/master/insytApp/www/img/kitkat.jpeg",
+          barcode_type: "ean-13"
+        }
+        $http({
+          method:"POST",
+          url: url,
+          data: $.param(formData)
+        }).then(function(result){
+           console.log(result.data.barcode[0].text);
+        });
+
+
+      }, function(err) {
+        console.log(err);
+      });
+
+
+    }
+
+
+
+
+  })
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -24,5 +65,12 @@ angular.module('starter.controllers', [])
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
-  };
-});
+  }
+})
+
+  .controller('HistoryCtrl', function($scope) {
+    $scope.settings = {
+    }
+  })
+
+;

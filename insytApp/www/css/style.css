@@ -1,5 +1,5 @@
 /* Empty. Add your own CSS if you like */
-.logo{background:rgba(0, 0, 0, 0) url("/img/logo.png") repeat scroll -3px 9px}
+.logo{background:rgba(0, 0, 0, 0) url("../img/logo.png") repeat scroll center center}
 .bg, .pane, .view{background:#fff; color:#000;}
 /*.bar-header{display:none}*/
 .bar-header{background:#242933}
@@ -7,17 +7,21 @@
 .has-header{top:44px}
 .p1 img{width:50px;height: 50px}
 .p1{border-radius: 20px}
-div.p1{float:left} 
+div.p1{float:left}
 div.t1{font-weight: bold; }
 .clear{clear:both}
 .bar.bar-stable{ border-color: #242933;}
+
 [nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar {
     background: #242933;
 }
+
+
 .top{margin-top:40px;}
 .scan {
-    left: 50px;
+    left: 5%;
     position: relative;
-    top: 292px;
-    width: 307px;
+    top: 330px;
+    width: 90%;
 }
+/*[nav-bar-transition="ios"] [nav-bar="active"] .bar, [nav-bar-transition="ios"] [nav-bar="entering"] .bar{background: #242933 url("../img/logo-sm.png") no-repeat scroll center 1px }*/

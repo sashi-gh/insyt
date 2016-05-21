@@ -1,0 +1,12 @@
+    <button class="button button-light" ng-click="takePicture()" >
+      Take Picture
+    </button>
+    <img ng-src="{{model.imageSrc}}" style="width: 100px; height: 100px;" />
+
+    <ion-spinner ng-show="{{model.showSpinner}}" ></ion-spinner>
+    <div >
+        UPC Code - {{model.upc}}
+    </div>
+
+
+

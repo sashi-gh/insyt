@@ -78,17 +78,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-  
+
   .state('tab.history', {
     url: '/history',
     views: {
       'tab-history': {
-        templateUrl: 'templates/tab-product.html',
+        templateUrl: 'templates/tab-history.html',
         controller: 'HistoryCtrl'
       }
     }
   })
-  
+
   ;
 
   // if none of the above states are matched, use this as the fallback

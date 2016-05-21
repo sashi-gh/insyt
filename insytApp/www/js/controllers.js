@@ -73,4 +73,16 @@ angular.module('starter.controllers', ["ngCordova"])
     }
   })
 
+  .controller('ProductCtrl', function($scope) {
+    $scope.settings = {
+    }
+  })
+
+  .controller('DetailCtrl', function($scope) {
+    $scope.settings = {
+    }
+  })
+
+
+
 ;
